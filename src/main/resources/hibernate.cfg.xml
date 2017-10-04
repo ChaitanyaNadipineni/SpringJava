@@ -1,0 +1,69 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!--
+        hibernate:
+        http://docs.jboss.org/hibernate/orm/current/quickstart/html_single/
+
+        inheritance, discriminator, version, collections, hql, criteria api, raw sql,hcql
+        transaction
+
+        Dirty write prevention
+        https://www.intertech.com/Blog/versioning-optimistic-locking-in-hibernate/
+        http://www.java4s.com/hibernate/hibernate-versioning-example-hibernate-versioning-of-objects/
+
+
+
+        Hibernate - ehcache  -> L2 cache (entity cache) , Query cache
+        -->
+
+        <!--
+        Spring:
+        Annotations, xml, scope (prototype, singleton, session .. etc)
+        hibernate integration, transactions
+
+        spring-aop, spring-security
+
+        spring restful services, @controller,
+
+        json -> jackson2
+
+        tomcat, jetty
+        -->
+
+        <!--
+        Spring boot:
+        -->
+        <!--
+        General:
+        Thread local storage - TLS
+
+        Debugger
+        profiler -> jprofiler, any profiler
+        -->
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hb-05-many-to-many?useSSL=false</property>
+        <property name="connection.username">hbstudent</property>
+        <property name="connection.password">hbstudent</property>
+
+        <!-- JDBC connection pool settings ... using built-in test pool -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- Select our SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo the SQL to stdout -->
+        <property name="show_sql">true</property>
+
+		<!-- Set the current session context -->
+		<property name="current_session_context_class">thread</property>
+ 
+    </session-factory>
+
+</hibernate-configuration>
