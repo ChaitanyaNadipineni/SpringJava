@@ -16,4 +16,12 @@ public class TrafficFortuneService {
          }
          return" heavy traffic ......";
      }
+
+    public String getFortune(boolean tripwire) {
+
+         if(tripwire){
+             throw new RuntimeException("major accident! Highway is closed");
+         }
+         return  getFortune();
+    }
 }

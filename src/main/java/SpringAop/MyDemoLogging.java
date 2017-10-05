@@ -40,8 +40,15 @@ public class MyDemoLogging {
 
         long begin=System.currentTimeMillis();
 
-        Object result=theJoinPoint.proceed();
+        Object result=null;
+        try {
+            result = theJoinPoint.proceed();
+        }catch(Exception e){
 
+            myLogger.warning(e.getMessage());
+
+            throw e;
+        }
         long end=System.currentTimeMillis();
 
         long duraiton= end-begin;
