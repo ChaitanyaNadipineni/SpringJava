@@ -1,9 +1,10 @@
 package SpringHibernate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service("employeePojo")
+@Component("employeePojo")
     public class EmployeeImplementation implements EmployeeCrud{
 
         @Autowired

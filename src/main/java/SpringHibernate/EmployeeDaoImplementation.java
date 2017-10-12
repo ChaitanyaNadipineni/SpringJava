@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository("stockDao")
+@Repository("employeePojo")
     public class EmployeeDaoImplementation extends CustomHibernateDaoSupport implements EmployeeDao{
 
         public void save(Employee employee){

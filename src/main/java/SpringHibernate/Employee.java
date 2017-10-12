@@ -5,7 +5,7 @@ import javax.persistence.*;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "stock")
+@Table(name = "employee")
 public class Employee  {
 
     private int empId;
@@ -22,7 +22,7 @@ public class Employee  {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "STOCK_ID")
+    @Column(name = "emp_id")
 
     public int getEmpId() {
         return empId;
@@ -33,7 +33,7 @@ public class Employee  {
     }
 
 
-    @Column(name = "STOCK_CODE")
+    @Column(name = "emp_dept")
 
     public String getEmpDept() {
         return empDept;
@@ -45,7 +45,7 @@ public class Employee  {
 
 
 
-    @Column(name = "STOCK_NAME")
+    @Column(name = "emp_name")
 
     public String getEmpName() {
         return empName;

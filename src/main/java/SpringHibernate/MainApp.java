@@ -7,12 +7,13 @@ public class MainApp
 {
     public static void main( String[] args )
     {
-        ClassPathXmlApplicationContext appContext =
-                new ClassPathXmlApplicationContext("spring/config/BeanLocations.xml");
+        ClassPathXmlApplicationContext Context =
+                new ClassPathXmlApplicationContext("springhibernate.xml");
 
-        EmployeeCrud employeePojo = (EmployeeCrud) appContext.getBean("employeePojo");
+        EmployeeCrud employeePojo =  Context.getBean("employeePojo",EmployeeCrud.class);
 
-        /** insert **/
+
+
         Employee employee = new Employee();
        employee.setEmpDept("software");
        employee.setEmpName("chaitanya");
@@ -22,5 +23,7 @@ public class MainApp
 
 
         System.out.println("Done");
+
+        Context.close();
     }
 }
